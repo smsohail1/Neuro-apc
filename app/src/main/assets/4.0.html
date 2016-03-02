@@ -1,0 +1,281 @@
+ <html>
+<head>
+<meta name="viewport" content="width=device-width" />
+<STYLE TYPE="text/css">
+<!--
+body{font-family: Arial; font-size: 9pt;}
+td{font-family: Arial; font-size: 9pt;}
+li { position: relative; margin-left: -25px;  }
+li span { position: relative;left: -6px;  }
+ul{ margin-bottom:0;}
+ul{ margin-top:0;}
+body {-webkit-user-select:none;}
+--->
+
+
+ button.readonly{
+ border:solid 1px #880000;
+ background-color:#ffffff;
+ color:#880000;
+}
+
+
+</STYLE>
+
+<script type="text/javascript">
+function valcal()
+{
+
+//var q5=frm.resp.value;
+//var w5=parseInt(q5);
+
+for (var i=0; i < document.frm.EO.length; i++)
+   {
+   if (document.frm.EO[i].checked)
+      {
+      var app_val = parseInt(document.frm.EO[i].value);
+      
+      		break;
+}
+     
+    else
+    {
+      var app_val = parseInt("0");
+    }
+   }
+
+for (var i=0; i < document.frm.BVR.length; i++)
+   {
+   if (document.frm.BVR[i].checked)
+      {
+      var pul_val = parseInt(document.frm.BVR[i].value);
+      
+      		break;
+}
+   else
+    {
+      var pul_val = parseInt("0");
+    }
+}
+
+for (var i=0; i < document.frm.BMR.length; i++)
+   {
+   if (document.frm.BMR[i].checked)
+      {
+      var gri_val = parseInt(document.frm.BMR[i].value);
+      
+      		break;
+}
+   else
+    {
+      var gri_val = parseInt("0");
+    }
+}
+
+
+var total= app_val + pul_val + gri_val;
+frm.txtresult.value=total;
+}
+
+
+</script>
+</head>
+
+<body STYLE="padding:1px 1px 1px 1px"  marginwidth='0' marginheight='0' leftmargin='0' topmargin='0'>
+
+<h3>Glasgow Coma Scale (GCS)</h3>
+
+
+<form name="frm">
+<table width="100%" cellpadding=4 cellspacing=0 style=" border: 1px solid #0074B9; border-collapse:collapse;">
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top" rowspan="4"><b>Eye opening</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Spontaneous</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="EO" value="4" onClick="valcal()"><b>4</b></td>
+</tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">To verbal command</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="EO" value="3" onClick="valcal()"><b>3</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">To pain</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="EO" value="2" onClick="valcal()"><b>2</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">None</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="EO" value="1" onClick="valcal()"><b>1</b></td>
+</tr>
+
+<tr>
+<td colspan="3" style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top">&nbsp;</td>
+</tr>
+
+
+<!-- <tr>
+<td colspan="2" style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top"><i>score</i></td>
+<td style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top"><b>
+	<select name="eoselect">
+		<option>4</option>
+		<option>3</option>
+		<option>2</option>
+		<option>1</option>
+	</select>
+</td>
+</tr> -->
+
+
+
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top" rowspan="5"><b>Best verbal response</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Oriented</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BVR" value="5" onClick="valcal()"><b>5</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Confused</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BVR" value="4" onClick="valcal()"><b>4</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Inappropriate words</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BVR" value="3" onClick="valcal()"><b>3</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Incomprehensible sounds</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BVR" value="2" onClick="valcal()"><b>2</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">None</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BVR" value="1" onClick="valcal()"><b>1</b></td>
+</tr>
+
+
+<tr>
+<td colspan="3" style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top">&nbsp;</td>
+</tr>
+
+
+<!-- <tr>
+<td colspan="2" style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top"><i>score</i></td>
+<td style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top"><b>
+	<select name="bvrselect">
+		<option>5</option>
+		<option>4</option>
+		<option>3</option>
+		<option>2</option>
+		<option>1</option>
+	</select>
+</td>
+</tr> -->
+
+
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top" rowspan="6"><b>Best motor response</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Obeys commands</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BMR" value="6" onClick="valcal()"><b>6</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Localizes pain</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BMR" value="5" onClick="valcal()"><b>5</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Withdraws from pain</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BMR" value="4" onClick="valcal()"><b>4</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Flexion to pain</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BMR" value="3" onClick="valcal()"><b>3</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Extension to pain</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BMR" value="2" onClick="valcal()"><b>2</b></td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">None</td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><input type="radio" name="BMR" value="1" onClick="valcal()"><b>1</b></td>
+</tr>
+
+
+
+<tr>
+<td colspan="3" style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top">&nbsp;</td>
+</tr>
+
+
+<!-- <tr>
+<td colspan="2" style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top"><i>score</i></td>
+<td style="background-color:#B0E2F2; border: 1px solid #000000;" valign="top"><b>
+	<select name="bmrselect">
+		<option>6</option>
+		<option>5</option>
+		<option>4</option>
+		<option>3</option>
+		<option>2</option>
+		<option>1</option>
+	</select>
+</td>
+</tr> -->
+
+
+
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" align="right" colspan="2">
+<input type="Reset" value="Reset" /></td>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top">
+<input type="text" name="txtresult" size="2" maxlength="2"  readonly="readonly" class="readonly"/>
+</td>
+</tr>
+</table>
+
+<br /><br />
+<table width="100%" cellpadding=4 cellspacing=0 style=" border: 1px solid #0074B9; border-collapse:collapse;">
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top" colspan="3"><b>GCS 8-12 = Somnolent</b></td>
+</tr>
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><b> >12 </b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">Mild</td>
+</tr>
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><b>12-9</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">Moderate</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="3">Somnolence: sleepy, easy to wake</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="3">Stupor: hypnoid, hard to wake</td>
+</tr>
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top" colspan="3"><b>GCS < 8 = Unconscious</b></td>
+</tr>
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><b>8-7</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Coma grade I</td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" rowspan="2">Light coma</td>
+</tr>
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><b>6-5</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Coma grade II</td>
+</tr>
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><b>4</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Coma grade III</td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" rowspan="2">Deep coma</td>
+</tr>
+<tr>
+<td style="background-color:#93D6ED; border: 1px solid #000000;" valign="top"><b>3</b></td>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">Coma grade IV</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="3">
+<b>Coma grade I:</b> directed defensive movements, normal tone, no impairment of pupillary and eye movements, vestibular ocular reflex (VOR) positive
+<br /><b>II:</b> undirected defensive movements, normal to increased tone, reaction to light intact, pupils variable
+<br /><b>III:</b> undirected movements, increased tone, generalized extension and flexion, pupils variable (mostly contracted, unequal), reaction to light decreased, VOR impaired
+<br /><b>IV:</b> No reaction to pain, flabby tone, pupils dilated and fixed, VOR negative, craniocaudal loss of brainstem reflexes
+</td>
+</tr>
+</table>
+</form>
+<br/> <br/> 
+ <br/><br/></body>
+</html>

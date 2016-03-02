@@ -1,0 +1,632 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width" />
+<STYLE TYPE="text/css">
+<!--
+body{font-family: Arial; font-size: 9pt;}
+td{font-family: Arial; font-size: 9pt;}
+li { position: relative; margin-left: -25px;  }
+li span { position: relative;left: -6px;  }
+body {-webkit-user-select:none;}
+
+ul{ margin-bottom:0;}
+ul{ margin-top:0;}
+--->
+
+button.readonly{
+    border:solid 1px #880000;
+    background-color:#ffffff;
+    color:#880000;
+}
+
+</STYLE>
+
+<script type="text/javascript">
+
+ 
+function cal()
+{
+  var total=0;
+var sum_basic=0;
+  var sum_abl=0;
+ var sum_or=0;
+  var sum1=0;
+  var sum=0;
+ var backsum=0;
+ var timesum=0;
+ var  visusum=0;
+
+
+  if(document.getElementById("day0").checked==true){sum_or+=0;} 
+  if(document.getElementById("day1").checked==true){sum_or+=1;} 
+  if(document.getElementById("year0").checked==true){sum_or+=0;} 
+  if(document.getElementById("year1").checked==true){sum_or+=1;} 
+  if(document.getElementById("state0").checked==true){sum_or+=0;} 
+  if(document.getElementById("state1").checked==true){sum_or+=1;} 
+  
+  if(document.getElementById("spend0").checked==true){sum_basic+=0;} 
+  if(document.getElementById("spend1").checked==true){sum_basic+=1;} 
+  if(document.getElementById("left0").checked==true){sum_basic+=0;} 
+  if(document.getElementById("left1").checked==true){sum_basic+=2;} 
+
+  if(document.getElementById("animal0").checked==true){sum+=0;} 
+  if(document.getElementById("animal1").checked==true){sum+=1;} 
+  if(document.getElementById("animal2").checked==true){sum+=2;} 
+  if(document.getElementById("animal3").checked==true){sum+=3;} 
+
+
+  if(document.getElementById("recall0").checked==true){backsum+=0;} 
+  if(document.getElementById("recall1").checked==true){backsum+=1;} 
+  if(document.getElementById("recall2").checked==true){backsum+=1;} 
+
+
+
+if(document.getElementById("store0").checked==true){timesum+=0;} 
+  if(document.getElementById("store1").checked==true){timesum+=2;} 
+ 
+if(document.getElementById("correct0").checked==true){timesum+=0;} 
+  if(document.getElementById("correct1").checked==true){timesum+=2;}
+
+if(document.getElementById("place0").checked==true){visusum+=0;} 
+  if(document.getElementById("place1").checked==true){visusum+=1;} 
+  
+  if(document.getElementById("triangle0").checked==true){visusum+=1;} 
+  if(document.getElementById("triangle1").checked==true){visusum+=0;} 
+  if(document.getElementById("triangle2").checked==true){visusum+=0;} 
+
+  if(document.getElementById("re0").checked==true){sum_abl+=1;} 
+  if(document.getElementById("re1").checked==true){sum_abl+=2;} 
+  if(document.getElementById("re2").checked==true){sum_abl+=3;} 
+  if(document.getElementById("re3").checked==true){sum_abl+=4;} 
+    if(document.getElementById("re4").checked==true){sum_abl+=5;} 
+
+if(document.getElementById("female0").checked==true){sum1+=0;} 
+  if(document.getElementById("female1").checked==true){sum1+=2;} 
+  
+if(document.getElementById("work0").checked==true){sum1+=0;} 
+  if(document.getElementById("work1").checked==true){sum1+=2;} 
+
+if(document.getElementById("live0").checked==true){sum1+=0;} 
+  if(document.getElementById("live1").checked==true){sum1+=2;} 
+
+if(document.getElementById("back0").checked==true){sum1+=0;} 
+  if(document.getElementById("back1").checked==true){sum1+=2;} 
+  
+
+document.getElementById("orientation").value=sum_or;
+
+document.getElementById("basic").value=sum_basic;
+
+document.getElementById("ability").value=sum_abl;
+
+document.getElementById("scoreread").value=sum1;
+
+document.getElementById("item").value=sum;
+
+document.getElementById("backward").value=backsum;
+
+document.getElementById("time").value=timesum;
+
+document.getElementById("visu").value=visusum;
+total=sum_or + sum_basic + sum + backsum + timesum + sum_abl + sum1 + visusum;
+ 
+document.getElementById("scoreresult1").value = total;
+
+}
+ 
+</script>
+</head>
+
+<body STYLE="padding:1px 1px 1px 1px"  marginwidth='0' marginheight='0' leftmargin='0' topmargin='0'>
+
+<form name="fm">
+<table width="100%" cellpadding=4 cellspacing=0 style=" border: 1px solid #0074B9; border-collapse:collapse;">
+
+<tr>
+<td style="background-color:#1876DF; border: 1px solid #000000;" valign="top" colspan="2">
+<font style="color:white;">
+<b>Saint Louis University Mental Status Examination (SLUMS)</b></font>
+</td>
+</tr>
+
+<tr>
+<td style="background-color:#E6E6E6; border: 1px solid #000000;" valign="top" colspan="2">Record patient name, age, alertness level, and level of education (years in school / highest degree obtained)</td>
+</tr>
+
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top">
+<b>1. Orientation</b>
+</td>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top">
+<b>Correct Answer</b>
+</td>
+
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+What day of the week is it? </td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top"> 
+<input type="radio" name="week" id="day1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="week" id="day0" value="0"  onchange="cal();"/> N 
+ </td>
+</tr>
+<tr>
+
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ What is the year?</td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top"> 
+<input type="radio" name="year" id="year1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="year" id="year0" value="0"  onchange="cal();"/> N 
+ </td>
+</tr>
+<tr>
+
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ What state are we in? </td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top"> 
+<input type="radio" name="state" id="state1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="state" id="state0" value="0"  onchange="cal();"/> N 
+
+</td>
+</tr>
+
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="orientation"  id="orientation" value="" readonly="readonly" class="readonly" size="5"/>
+/ 3
+</td>
+
+</tr>
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top" colspan="2"><b>2. Registration</b></td>
+ </td>
+
+
+</tr>
+
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">
+Please remember these five objects. I will ask you what they are later.
+</td>
+ </tr>
+
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">
+1. Apple<br />2. Pen<br />3. Tie<br />4. House<br />5. Car</td>
+ </tr>
+
+ 
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top" colspan="2">
+ <b>3. Basic math</b></td>
+ 
+</tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">
+You have $100 and you go to the store and buy a dozen apples for $3 and a tricycle for $20.
+ </td>
+ </tr>
+ 
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 
+</td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<b>Correct Answer</b>
+</td>
+</tr>
+ <tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top"> 
+ How much did you spend?  </td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top"> 
+<input type="radio" name="spend" id="spend1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="spend" id="spend0" value="0"  onchange="cal();"/> N 
+
+</td>
+</tr>
+
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 
+ How much do you have left?</td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top"> 
+
+<input type="radio" name="left" id="left1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="left" id="left0" value="0"  onchange="cal();"/> N 
+</td>
+</tr>
+ 
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="basic"  id="basic" value="" readonly="readonly" class="readonly" size="5"/>
+/ 3
+</td>
+
+</tr>
+
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top" colspan="2">
+ 
+<b>4. Item naming</b></td>
+ 
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">
+ Please name as many animals as you can in 1 minute.
+ 
+ </td>
+ </tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 
+</td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<b>Number of animals named</b>
+</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top"  >
+ 0-4 animals</td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="animal" id="animal0" value="0"  onchange="cal();"/> 
+</td>
+ 
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top"> 5-9 animals
+</td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="animal" id="animal1" value="1"  onchange="cal();"/> 
+ </td>
+ 
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+10-14 animals  
+</td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="animal" id="animal2" value="2"  onchange="cal();"/> 
+
+ </td>
+ 
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 15 + animals
+</td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="animal" id="animal3" value="3"  onchange="cal();"/> 
+</td>
+ 
+</tr> 
+
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="item"  id="item" value="" readonly="readonly" class="readonly" size="5"/>
+/ 3
+</td>
+
+</tr>
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top"><b>5. Recall</b></td>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top">
+<b>Number of objects recalled</b>
+</td>
+
+</tr> 
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+What were the five objects I asked you to remember?  </td>
+
+</td>
+ <td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+  <input type="radio" name="obj" id="re0" value="1"  onchange="cal();"/> 1<br/>
+  <input type="radio" name="obj" id="re1" value="2"  onchange="cal();"/> 2<br/>
+    <input type="radio" name="obj" id="re2" value="3"  onchange="cal();"/> 3<br/>
+      <input type="radio" name="obj" id="re3" value="4"  onchange="cal();"/> 4<br/>
+        <input type="radio" name="obj" id="re4" value="5"  onchange="cal();"/> 5
+</td>
+</tr>
+
+
+
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="ability"  id="ability" value="" readonly="readonly" class="readonly" size="5"/>
+
+/ 5
+</td>
+
+</tr>
+
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top" colspan="2"><b>6. Backwards recall</b></td>
+ 
+</tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">
+I am going to give you a series of numbers and I would like you to give them to me backwards.
+For example, if I say 42, you would say 24.
+ </td>
+ 
+</tr>
+
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 
+</td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<b>Correct Answer</b>
+</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top"> 
+ 87
+    </td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="call1" id="recall0" value="0"  onchange="cal();"/> 
+
+</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top"> 
+   649 
+   </td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="call2" id="recall1" value="1"  onchange="cal();"/> 
+
+</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top"> 
+    8537
+  </td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="call3" id="recall2" value="1"  onchange="cal();"/> 
+
+</td>
+</tr>
+ 
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="backward"  id="backward" value="" readonly="readonly" class="readonly" size="5"/>
+/ 2
+</td>
+
+</tr>
+
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top" colspan="2">
+<b>7. Clock drawing</b></td>
+ 
+</tr>
+ <tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">This is a clock face. Please put in the hour markers and the time at ten minutes to eleven o&#39;clock.
+<br /><img src="2.3.0.1.png"></img>
+ </td>
+ 
+</tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 
+</td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<b>Correct Answer</b>
+</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" >
+ Hour markers ok  </td>
+ <td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="math" id="store1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="math" id="store0" value="0"  onchange="cal();"/> N 
+
+ </td>
+</tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" >
+ Time correct </td>
+ <td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+ <input type="radio" name="math1" id="correct1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="math1" id="correct0" value="0"  onchange="cal();"/> N 
+</td>
+</tr>
+
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="time"  id="time" value="" readonly="readonly" class="readonly" size="5"/>
+/ 4
+</td>
+
+</tr>
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top" colspan="2">
+<b>8. Visuospatial ability</b></td>
+ 
+</tr>
+
+  
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">
+ <img src="2.3.0.2.png"></img></td>
+ </tr>
+
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 
+</td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<b>Correct Answer</b>
+</td>
+</tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ Please place an X in the triangle.
+</td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+ <input type="radio" name="triangle" id="place1" value="1"  onchange="cal();"/> Y 
+<input type="radio" name="triangle" id="place0" value="0"  onchange="cal();"/> N 
+
+</td>
+</tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ Which of the above figures is largest ?</td>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+ <input type="radio" name="squ" id="triangle0" value="1"  onchange="cal();"/>Square <br/>
+<input type="radio" name="squ" id="triangle1" value="1"  onchange="cal();"/>Triangle <br/> 
+<input type="radio" name="squ" id="triangle2" value="1"  onchange="cal();"/>Rectangle
+</td>
+</tr>
+
+
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="visu"  id="visu" value="" readonly="readonly" class="readonly" size="5"/>
+/ 2
+</td>
+
+</tr>
+<tr>
+<td style="background-color:#9DD6EB; border: 1px solid #000000;" valign="top" colspan="2">
+<b>9. Reading comprehension</b></td>
+ </tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2">
+I am going to tell you a story. Please listen carefully because afterwards, I&#39;m going to ask you some questions about it.
+<br /><br />Jill was a very successful stockbroker. She made a lot of money on the stock market. She then met Jack, a devastatingly handsome man. She married him and had three children. They lived in Chicago. She then stopped work and stayed at home to bring up her children. When they were teenagers, she went back to work. She and Jack lived happily ever after.
+</td>
+  </tr>
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top">
+ 
+</td>
+
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<b>Correct Answer</b>
+</td>
+</tr>
+  
+  <tr>
+  <td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" >
+ What was the female&#39;s name? </td>
+ 
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="read" id="female1" value="2"  onchange="cal();"/> Y 
+<input type="radio" name="read" id="female0" value="0"  onchange="cal();"/> N 
+
+</td>
+
+ </tr>
+
+<tr>
+  <td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" >
+ What work did she do? </td>
+ 
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="rad" id="work1" value="2"  onchange="cal();"/> Y 
+<input type="radio" name="rad" id="work0" value="0"  onchange="cal();"/> N 
+
+</td>
+
+ </tr>
+
+<tr>
+  <td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" >
+ When did she go back to work?  </td>
+ 
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="re" id="back1" value="2"  onchange="cal();"/> Y 
+<input type="radio" name="re" id="back0" value="0"  onchange="cal();"/> N 
+
+</td>
+
+ </tr>
+ 
+ <tr>
+  <td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" >
+ What state did she live in?
+ </td>
+ 
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top">
+<input type="radio" name="rd" id="live1" value="2"  onchange="cal();"/> Y 
+<input type="radio" name="rd" id="live0" value="0"  onchange="cal();"/> N 
+
+</td>
+
+ </tr>
+
+ <tr>
+<td style="background-color:#ffffff; border:1px solid #808080;" valign="top" align="left"  >
+ </td>
+<td  style="background-color:#F1FFFF; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="scoreread"  id="scoreread" value="" readonly="readonly" class="readonly" size="5"/>
+
+/ 8
+</td>
+
+</tr>
+
+ <tr>
+<td style="background-color:#9DD6EB; border:1px solid #808080;" valign="top" align="left"  >
+<input type="reset" value="Reset" onClick="reset1();">  
+</td>
+<td  style="background-color:#9DD6EB; border:1px solid #808080;" valign="top" align="left">
+<input type="number" name="scoreresult1"  id="scoreresult1" value="" readonly="readonly" class="readonly" size="5"/></td>
+
+</tr>
+
+<tr>
+<td style="background-color:#F1FFFF; border: 1px solid #000000;" valign="top" colspan="2"><b>Scoring</b></td>
+</tr>
+
+<tr>
+<td style="background-color:#FFFFFF; border: 1px solid #000000;" valign="top" colspan="2"><b>High school education:</b><br /> 27-30: Normal
+<br />21-26: Mild neurocognitive disorder <br />1-20: Dementia<br/>
+
+<b>Less than high school education:</b> <br />25-30: Normal
+<br />20-24: Mild neurocognitive disorder <br />1-19: Dementia</td>
+</tr>
+</table>
+</form>
+<i>Reference: SH Tariq, N Tumosa, JT Chibnall, HM Perry III, and JE Morley. The Saint Louis University Mental Status (SLUMS) Examination for Detecting Mild Cognitive Impairment and Dementia is more sensitive than the Mini-Mental Status Examination (MMSE) - A pilot study. Am J Geriatr Psychiatry 2006;4:900-910.</i>
+
+<br/> <br/> <br/> 
+</body>
+</html>
