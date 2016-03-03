@@ -350,12 +350,20 @@ public class Toc_discription extends ActionBarActivity implements ViewPager.OnPa
 
             //     String str = String.valueOf(et.getText().toString().toCharArray()[count1]);
             //  CharSequence char_sequence=(CharSequence) str;
-            if (entry1.getValue().equalsIgnoreCase(String.valueOf(position))) {
-                String get_key = entry1.getKey().toString();
-                Header_title.setText(get_key.toString());
+//            if(position==18)
+//            {
+//                Header_title.setText("Neuroanatomy of brain");
+//                viewPager.setCurrentItem(position+1);
+//
+//            }
+
+                if (entry1.getValue().equalsIgnoreCase(String.valueOf(position))) {
+                    String get_key = entry1.getKey().toString();
+                    Header_title.setText(get_key.toString());
 
 
-            }
+                }
+
         }
 //        Toast y = Toast.makeText(Toc_discription.this, String.valueOf(position), Toast.LENGTH_SHORT);
 //        y.show();

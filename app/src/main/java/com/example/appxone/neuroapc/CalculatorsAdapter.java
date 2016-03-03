@@ -61,9 +61,9 @@ Typeface typeface;
         return position;
     }
 
-    public class ViewHolder {
-        public ImageView im;
-    }
+//      public class ViewHolder {
+//        public ImageView im;
+//    }
 
 
     @Override
