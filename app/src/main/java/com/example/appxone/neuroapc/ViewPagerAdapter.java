@@ -55,7 +55,8 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         // Locate the TextViews in viewpager_item.xml
         WEVBIEW = (WebView) itemView.findViewById(R.id.webView);
-
+        WEVBIEW.getSettings().setBuiltInZoomControls(true);
+        WEVBIEW.getSettings().setSupportZoom(true);
         WEVBIEW.getSettings().setLoadsImagesAutomatically(true);
         WEVBIEW.getSettings().setJavaScriptEnabled(true);
         WEVBIEW.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
